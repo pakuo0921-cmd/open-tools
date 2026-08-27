@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>App Launcher</title>
+  <script>
+    window.onload = function() {
+      // URLの後ろについている ?pkg=パッケージ名 を自動で読み取る
+      const urlParams = new URLSearchParams(window.location.search);
+      const pkg = urlParams.get('pkg');
+      
+      if (pkg) {
+        // 読み取ったアプリのIntentを生成して即座に起動
+        const intentUrl = "intent://#Intent;package=" + pkg + ";end";
+        window.location.replace(intentUrl);
+      } else {
+        document.body.innerText = "アプリが指定されていません。";
+      }
+    };
+  </script>
+</head>
+<body>
+  <p>アプリを起動しています...</p>
+</body>
+</html>
+
