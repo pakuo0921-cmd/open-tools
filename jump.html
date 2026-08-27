@@ -3,13 +3,35 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>起動中...</title>
+  <title>カメラ起動</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f4f8;
+      font-family: sans-serif;
+    }
+    .btn {
+      display: block;
+      padding: 24px 36px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #ffffff;
+      background-color: #007aff;
+      text-decoration: none;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0, 122, 255, 0.3);
+      text-align: center;
+    }
+    .btn:active {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
-  <p>カメラを起動しています...</p>
-  <script>
-    // ページが開いた瞬間に直接インテントへ飛ばす
-    window.location.href = "intent:#Intent;action=android.media.action.IMAGE_CAPTURE;end";
-  </script>
+  <a href="intent:#Intent;action=android.media.action.STILL_IMAGE_CAMERA;category=android.intent.category.DEFAULT;end" class="btn">📸 カメラを起動する</a>
 </body>
 </html>
